@@ -1,0 +1,31 @@
+
+apply plugin: 'java'
+apply plugin: 'maven'
+apply from: '../publish.gradle'
+
+group = GROUP
+version = VERSION_NAME
+archivesBaseName = "tools"
+sourceCompatibility = 1.6
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            pom.project {
+                name POM_NAME
+                artifactId POM_ARTIFACT_ID
+                packaging POM_PACKAGING
+                description 'LibGDX Runtime for VisEditor'
+            }
+        }
+    }
+}
