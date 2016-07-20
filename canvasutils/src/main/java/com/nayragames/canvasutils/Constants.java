@@ -7,4 +7,6 @@ package com.nayragames.canvasutils;
  * @since 7/20/2016.
  */
 public class Constants {
+
+
 }
